@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    entrypoint: "npm run serve"
+    container_name: app
+    restart: always
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8080"
+
+  ipfs:
+    build:
+      context: ./ipfs
+    container_name: ipfs
+    restart: always
+    ports:
+      - "8080:8080"
+      - "4001:4001"
+      - "5001:5001"
+    volumes:
+      - ./ipfs/.ipfs:/data/ipfs
+      - ./dist:/app
