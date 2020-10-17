@@ -2,14 +2,19 @@
   <div id="app">
     <router-view> </router-view>
   </div>
+  <ipfs-info />
 </template>
 
 <script lang="ts">
 import "@/assets/styles.css";
 import { defineComponent } from "vue";
+import ipfsInfo from "@/components/ipfsInfo.vue";
 
 export default defineComponent({
-  name: "App"
+  name: "App",
+  components: {
+    ipfsInfo
+  }
 });
 </script>
 
