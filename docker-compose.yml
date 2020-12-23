@@ -5,7 +5,6 @@ services:
     build: .
     entrypoint: "npm run serve"
     container_name: app
-    restart: always
     volumes:
       - .:/app
     ports:
